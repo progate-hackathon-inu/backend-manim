@@ -6,7 +6,7 @@ import os
 def configure_manim():
     config.disable_caching = True
     config.flush_cache = True
-    config.background_color = WHITE
+    config.background_color = BLACK
     config.frame_rate = 30
     config.pixel_width = 1280
     config.pixel_height = 720

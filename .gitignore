@@ -167,3 +167,5 @@ demo/media/videos/**/*.txt
 *.otf
 .local
 .jupyter
+
+media/

@@ -19,6 +19,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+async def hello_world():
+    return {"message": "http://localhost:10000/docs"}
+
 @app.post("/uploadcode/")
 async def create_video(file: UploadFile = File(...)):
     save_path = f"./saved_files/{file.filename}"
