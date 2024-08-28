@@ -19,8 +19,8 @@ COPY ./fonts/haranoaji /usr/share/fonts/opentype/haranoaji
 COPY ./fonts/haranoaji-extra /usr/share/fonts/opentype/haranoaji-extra
 RUN fc-cache -fv
 
-RUN apt-get install -y xelatex
-RUN apt-get install -y fonts-noto-cjk
+# RUN apt-get install -y xelatex
+# RUN apt-get install -y fonts-noto-cjk
 
 EXPOSE 10000
 
