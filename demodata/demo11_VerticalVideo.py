@@ -1,24 +1,23 @@
 from manim import *
 
 config.background_color = WHITE
-Mobject.set_default(color = BLACK)
+Mobject.set_default(color=BLACK)
 
 Tex.set_default(tex_template=TexTemplate(
-    tex_compiler = "lualatex", 
-    # tex_compiler = "luatex" でも可
-    output_format = ".pdf", 
-    preamble = r"""
+    tex_compiler="xelatex",  # xelatexに変更
+    output_format=".xdv",    # .xdvに変更
+    preamble=r"""
         \usepackage{amsmath}
         \usepackage{amssymb}
-        \usepackage{luatexja}
-        \usepackage[haranoaji]{luatexja-preset}
+        \usepackage{xeCJK}
+        \setCJKmainfont{Noto Sans CJK JP}
     """
 ))
 
 class VerticalVideo(Scene):
     def construct(self):
         # Create Text objects
-        first_line = Tex('Manimを使用して')
+        first_line = Tex(r'\textrm{Manim\CJKfamily{を使用して}}')
         second_line = Text('クールなアニメーションを作成する')
         third_line = Text('自分で試してみてください', color=RED)
 

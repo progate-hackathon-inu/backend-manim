@@ -4,21 +4,21 @@ config.background_color = WHITE
 Mobject.set_default(color = BLACK)
 
 Tex.set_default(tex_template=TexTemplate(
-    tex_compiler = "lualatex", 
-    # tex_compiler = "luatex" でも可
-    output_format = ".pdf", 
-    preamble = r"""
-        \usepackage{amsmath}
-        \usepackage{amssymb}
-        \usepackage{luatexja}
-        \usepackage[haranoaji]{luatexja-preset}
+    tex_compiler="xelatex",
+    output_format=".xdv",
+    preamble=r"""
+    \usepackage{amsmath}
+    \usepackage{amssymb}
+    \usepackage{xeCJK}
+    \setCJKmainfont{IPAexMincho}
+    \usepackage[utf8]{inputenc}
     """
 ))
 
 class displayTextJP(Scene):
     def construct(self):
         # Create Text objects
-        first_line = Tex('Manimを使用して')
+        first_line = Text('Manimを使用して', font="IPAexMincho", font_size=36)
         second_line = Text('クールなアニメーションを作成する')
         third_line = Text('自分で試してみてください', color=RED)
 
