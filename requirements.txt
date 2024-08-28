@@ -6,3 +6,5 @@ mysql-connector-python
 cryptography
 opencv-python
 python-multipart
+pytest
+fastapi[testing]
